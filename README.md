@@ -67,3 +67,5 @@ And finally, we have the model for the join table, `UserItem`. In this model, we
 This gives us access to the users who have purchased a particular item, as well as all the items purchased by a specific user.
 
 
+
+<a href='https://learn.co/lessons/sinatra-activerecord-associations-readme' data-visibility='hidden'>View this lesson on Learn.co</a>

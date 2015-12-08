@@ -2,7 +2,12 @@
 
 By now, you're familiar with the basic ActiveRecord associations: `has_many` and `belongs_to`. But how would you handle an e-commerce site? If you think about the models, there would be a `User` class and an `Item` class, which would contain all the items a user could buy. A user could select to purchase many items, so your first instinct might be to store `user_id` as a column of the `Items` table. But with an online store, many many users could select to buy the same item, so you would need to store more than one `user_id`. Clearly that option wouldn't work. Basically, we're dealing with a man-to-many relationship. A user can have many items, and an item can belong to many users.
 
-This is where `Join Tables` come to play, with the `has_many :through` association, which is used for . A join table is a table that only has two columns. To keep up with the online store example, this table would contain a `user_id` and `item_id`.
+This is where **Join Tables** come to play, with the `has_many :through` association, which is used for object associations where more than one object can own many objects of the same class. 
+
+In the owner and pet `has_many` and `belongs_to` relationship, we store the `owner_id` on the `pets` table. We use the foreign key to store our relationship .
+
+A join table is a table that only has two columns. To keep up with the online store example, this table would contain a `user_id` and `item_id`. Each row in this table would contain a user's ID and an item's ID. We call this join table `user_items`. The `has_many :through` is always the singular and in first part of the join table name, and the `belongs_to` portion of the relationship is pluralized in the second part of the table name.
+
 
 ### Migrations
 
@@ -10,19 +15,26 @@ First, we need to create three migrations: one for the users table, one for the 
 
 ```ruby
 
-class CreateAppointments < ActiveRecord::Migration
+class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
       t.string :name
       t.timestamps null: false
     end
- 
+end
+
+class CreateItems < ActiveRecord::Migration
+  def change
     create_table :items do |t|
       t.string :name
       t.integer :price
       t.timestamps null: false
     end
+  end
+end
  
+class CreateUserItems < ActiveRecord::Migration
+  def change 
     create_table :user_items do |t|
       t.integer :user_id
       t.integer :item_id
@@ -33,7 +45,7 @@ end
 
 ```
 
-In this migration, we create three tables with columns. You'll notice the last table is our join table. The `user_items` table has two columns `user_id` and `item_id`.
+In these migrations, we create three tables with columns. You'll notice the last table is our join table. The `user_items` table has two columns `user_id` and `item_id`.
 
 ### Models
 

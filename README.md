@@ -63,8 +63,8 @@ class Item < ActiveRecord::Base
 end
 
 class UserItem < ActiveRecord::Base 
-  belongs_to :users
-  belongs_to :items
+  belongs_to :user
+  belongs_to :item
 end
 ```
 
@@ -81,3 +81,5 @@ This gives us access to the users who have purchased a particular item, as well 
 
 
 <a href='https://learn.co/lessons/sinatra-activerecord-associations-readme' data-visibility='hidden'>View this lesson on Learn.co</a>
+
+<a href='https://learn.co/lessons/sinatra-activerecord-associations-join-tables' data-visibility='hidden'>View this lesson on Learn.co</a>

@@ -82,4 +82,4 @@ This gives us access to the users who have purchased a particular item, as well 
 
 <a href='https://learn.co/lessons/sinatra-activerecord-associations-readme' data-visibility='hidden'>View this lesson on Learn.co</a>
 
-<a href='https://learn.co/lessons/sinatra-activerecord-associations-join-tables' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/sinatra-activerecord-associations-join-tables' title='Sinatra ActiveRecord Associations: Join Tables'>Sinatra ActiveRecord Associations: Join Tables</a> on Learn.co and start learning to code for free.</p>

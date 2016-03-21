@@ -6,7 +6,7 @@ This is where **Join Tables** come to play, with the `has_many :through` associa
 
 In the owner and pet `has_many` and `belongs_to` relationship, we store the `owner_id` on the `pets` table. We use the foreign key to store our relationship .
 
-A join table is a table that only has two columns. To keep up with the online store example, this table would contain a `user_id` and `item_id`. Each row in this table would contain a user's ID and an item's ID. We call this join table `user_items`. The `has_many :through` is always the singular and in first part of the join table name, and the `belongs_to` portion of the relationship is pluralized in the second part of the table name.
+A join table is a table that only has two columns. To keep up with the online store example, this table would contain a `user_id` and `item_id`. Each row in this table would contain a user's ID and an item's ID. We call this join table `user_items`. The `has_many :through` is always singular and in the first part of the join table name, and the `belongs_to` portion of the relationship is pluralized in the second part of the table name.
 
 
 ### Migrations
@@ -83,3 +83,5 @@ This gives us access to the users who have purchased a particular item, as well 
 <a href='https://learn.co/lessons/sinatra-activerecord-associations-readme' data-visibility='hidden'>View this lesson on Learn.co</a>
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/sinatra-activerecord-associations-join-tables' title='Sinatra ActiveRecord Associations: Join Tables'>Sinatra ActiveRecord Associations: Join Tables</a> on Learn.co and start learning to code for free.</p>
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/sinatra-activerecord-associations-join-tables'>ActiveRecord Associations: Join Tables</a> on Learn.co and start learning to code for free.</p>

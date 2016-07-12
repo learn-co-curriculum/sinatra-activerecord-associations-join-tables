@@ -2,7 +2,7 @@
 
 By now, you're familiar with the basic ActiveRecord associations: `has_many` and `belongs_to`. But how would you handle an e-commerce site? If you think about the models, there would be a `User` class and an `Item` class, which would contain all the items a user could buy. A user could select to purchase many items, so your first instinct might be to store `user_id` as a column of the `Items` table. But with an online store, many many users could select to buy the same item, so you would need to store more than one `user_id`. Clearly that option wouldn't work. Basically, we're dealing with a many-to-many relationship. A user can have many items, and an item can belong to many users.
 
-This is where **Join Tables** come to play, with the `has_many :through` association, which is used for object associations where more than one object can own many objects of the same class. 
+This is where **Join Tables** come in to play, with the `has_many :through` association, which is used for object associations where more than one object can own many objects of the same class. 
 
 In the owner and pet `has_many` and `belongs_to` relationship, we store the `owner_id` on the `pets` table. We use the foreign key to store our relationship .
 
@@ -54,12 +54,12 @@ Next we need to define the appropriate relationships in our three models.
 ```ruby
 class User < ActiveRecord::Base
   has_many :user_items
-  has_many :items, through: user_items
+  has_many :items, through: :user_items
 end
 
 class Item < ActiveRecord::Base
   has_many :user_items
-  has_many :users, through: user_items
+  has_many :users, through: :user_items
 end
 
 class UserItem < ActiveRecord::Base 
@@ -85,3 +85,5 @@ This gives us access to the users who have purchased a particular item, as well 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/sinatra-activerecord-associations-join-tables' title='Sinatra ActiveRecord Associations: Join Tables'>Sinatra ActiveRecord Associations: Join Tables</a> on Learn.co and start learning to code for free.</p>
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/sinatra-activerecord-associations-join-tables'>ActiveRecord Associations: Join Tables</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/sinatra-activerecord-associations-join-tables'>ActiveRecord Associations: Join Tables</a> on Learn.co and start learning to code for free.</p>

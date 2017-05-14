@@ -21,6 +21,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.timestamps null: false
     end
+	end
 end
 
 class CreateItems < ActiveRecord::Migration
@@ -81,3 +82,5 @@ This gives us access to the users who have purchased a particular item, as well 
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/sinatra-activerecord-associations-join-tables'>ActiveRecord Associations: Join Tables</a> on Learn.co and start learning to code for free.</p>
 
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/sinatra-activerecord-associations-join-tables'>ActiveRecord Associations: Join Tables</a> on Learn.co and start learning to code for free.</p>

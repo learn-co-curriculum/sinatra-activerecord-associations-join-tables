@@ -6,8 +6,7 @@ This is where **Join Tables** come in to play, with the `has_many :through` asso
 
 In the owner and pet `has_many` and `belongs_to` relationship, we store the `owner_id` on the `pets` table. We use the foreign key to store our relationship .
 
-A join table is a table that only has two columns. To keep up with the online store example, this table would contain a `user_id` and `item_id`. Each row in this table would contain a user's ID and an item's ID. We call this join table `user_items`. The `has_many :through` is always singular and in the first part of the join table name, and the `belongs_to` portion of the relationship is pluralized in the second part of the table name.
-
+A join table is a table that connects records that are related, but in different tables themselves. To keep up with the online store example, this table would contain a `user_id` and `item_id`. Each row in this table would contain a user's ID and an item's ID. We call this join table `user_items`, because the name makes it clear that we are linking the `users` and the `items` tables.
 
 ### Migrations
 
@@ -21,6 +20,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.timestamps null: false
     end
+  end
 end
 
 class CreateItems < ActiveRecord::Migration

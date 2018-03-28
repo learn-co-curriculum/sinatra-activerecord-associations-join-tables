@@ -68,7 +68,7 @@ class UserItem < ActiveRecord::Base
 end
 ```
 
-Our `User` class has two associations, the first is a `has_many` association with the join table, and the second is the `has_many through:` with to connect users and items.
+Our `User` class has two associations. The first is a `has_many` association with the join table, and the second is the `has_many through:` to connect users and items.
 
 We set up a similar pattern of relationships for the `Item` class, this time to connect items to users.
 
@@ -81,3 +81,5 @@ This gives us access to the users who have purchased a particular item, as well 
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/sinatra-activerecord-associations-join-tables'>ActiveRecord Associations: Join Tables</a> on Learn.co and start learning to code for free.</p>
 
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/sinatra-activerecord-associations-join-tables'>ActiveRecord Associations: Join Tables</a> on Learn.co and start learning to code for free.</p>

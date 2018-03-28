@@ -45,7 +45,7 @@ end
 
 ```
 
-In these migrations, we create three tables with columns. You'll notice the last table is our join table. The `user_items` table has two columns `user_id` and `item_id`.
+In these migrations, we create three tables with columns. You'll notice the last table is our join table. The `user_items` table has two columns: `user_id` and `item_id`.
 
 ### Models
 
@@ -68,7 +68,7 @@ class UserItem < ActiveRecord::Base
 end
 ```
 
-Our `User` class has two associations, the first is a `has_many` association with the join table, and the second is the `has_many through:` with to connect users and items.
+Our `User` class has two associations. The first is a `has_many` association with the join table, and the second is the `has_many through:` to connect users and items.
 
 We set up a similar pattern of relationships for the `Item` class, this time to connect items to users.
 

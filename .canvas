@@ -1,0 +1,6 @@
+---
+:lessons:
+- :id: 13230
+  :course_id: 355
+  :canvas_url: https://learning.flatironschool.com/courses/355/pages/sinatra-activerecord-associations-join-tables
+  :type: page
